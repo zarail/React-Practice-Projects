@@ -1,7 +1,8 @@
 export function MainGoal() {
   return (
     <header>
-      <h1>My main Goal:</h1>
+      <h1>⚛</h1>
+      <h2>My main Goal:</h2>
       <p>
         Learn React.js in depth and from the ground up, in order to start my career in tech. 😊
       </p>
