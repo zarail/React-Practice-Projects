@@ -1,22 +1,6 @@
 import { COUNTRIES } from "./data.js";
-
-function Header() {
-  return (
-    <header>
-      <h1>German is the official language in these countries:</h1>
-    </header>
-  );
-}
-
-function Country({ flag, name, capital }) {
-  return (
-    <li>
-      <img src={flag} alt={name} />
-      <h2>{name}</h2>
-      <p>Capital: {capital}</p>
-    </li>
-  );
-}
+import Header from "./components/Header.jsx";
+import Country from "./components/Country.jsx";
 
 function App() {
   return (
