@@ -1,5 +1,5 @@
 import { COUNTRIES } from "./data.js";
-import Header from "./components/Header.jsx";
+import Header from "./components/Header/Header.jsx";
 import Country from "./components/Country.jsx";
 
 function App() {
