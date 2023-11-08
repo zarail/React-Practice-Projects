@@ -21,9 +21,9 @@ export function MainGoal() {
   return (
     <header>
       <img src={reactLogo} alt="atom" className="logo" />
-      <h2>My main React goal:</h2>
+      <h1>My main React.js goal</h1>
       <p>
-        Learn React.js <em>{synonym}</em>, in order to start my career in tech.
+        Learning it <em>{synonym}</em>, in order to start my career in tech.
       </p>
     </header>
   )
