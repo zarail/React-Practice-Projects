@@ -63,18 +63,18 @@ main h2 {
   font-size: 1rem;
 }
 
-#info {
+#infos {
   padding: 3rem;
   border-radius: 6px;
   background-color: #490000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-#info h2 {
+#infos h2 {
   text-align: left;
 }
 
-#info menu {
+#infos menu {
   margin: 1rem 0;
   padding: 0;
   display: flex;
@@ -82,7 +82,7 @@ main h2 {
   list-style: none;
 }
 
-#info menu button {
+#infos menu button {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 6px;
@@ -94,12 +94,27 @@ main h2 {
   transition: all 0.2s ease-in-out;
 }
 
-#info menu button:hover {
+#infos menu button:hover {
   background-color: #370202;
   color: #f7e6e6;
 }
 
-#info menu button.active {
+#infos menu button.active {
   background-color: #370202;
   color: #f7e6e6;
+}
+
+#tab-content {
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #650303;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#tab-content h3 {
+  margin: 0;
+}
+
+#tab-content code {
+  font-size: 1rem;
 }
