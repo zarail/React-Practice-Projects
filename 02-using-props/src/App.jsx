@@ -3,11 +3,10 @@ import { useState } from "react";
 // it returns an array with two elements
 // functions that start with "use" are hooks
 // we must call it on the top level of the component function!
-import { COUNTRIES } from "./data.js";
+import { COUNTRIES, INFOS } from "./data.js";
 import Header from "./components/Header/Header.jsx";
 import Country from "./components/Country.jsx";
 import TabButton from "./components/TabButton.jsx";
-import { INFOS } from "./data.js";
 
 function App() {
   const [selectedCountry, setSelectedCountry] = useState();
