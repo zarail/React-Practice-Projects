@@ -33,6 +33,9 @@ function App() {
       <main>
         <section id="countries">
           <ul>
+            {/*
+            instead of writing the same code 5 times, we can use "map":
+            
             <Country
               flag={COUNTRIES[0].flag}
               name={COUNTRIES[0].name}
@@ -42,6 +45,11 @@ function App() {
             <Country {...COUNTRIES[2]} />
             <Country {...COUNTRIES[3]} />
             <Country {...COUNTRIES[4]} />
+            */}
+
+            {COUNTRIES.map((countryItem) => (
+              <Country key={countryItem.name} {...countryItem} />
+            ))}
           </ul>
         </section>
         <section id="infos">
