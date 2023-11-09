@@ -47,19 +47,34 @@ function App() {
         <section id="infos">
           <h2>Country Information</h2>
           <menu>
-            <TabButton onSelect={() => handleSelect("austria")}>
+            <TabButton
+              isSelected={selectedCountry === "austria"}
+              onSelect={() => handleSelect("austria")}
+            >
               Austria
             </TabButton>
-            <TabButton onSelect={() => handleSelect("germany")}>
+            <TabButton
+              isSelected={selectedCountry === "germany"}
+              onSelect={() => handleSelect("germany")}
+            >
               Germany
             </TabButton>
-            <TabButton onSelect={() => handleSelect("liechtenstein")}>
+            <TabButton
+              isSelected={selectedCountry === "liechtenstein"}
+              onSelect={() => handleSelect("liechtenstein")}
+            >
               Liechtenstein
             </TabButton>
-            <TabButton onSelect={() => handleSelect("luxembourg")}>
+            <TabButton
+              isSelected={selectedCountry === "luxembourg"}
+              onSelect={() => handleSelect("luxembourg")}
+            >
               Luxembourg
             </TabButton>
-            <TabButton onSelect={() => handleSelect("switzerland")}>
+            <TabButton
+              isSelected={selectedCountry === "switzerland"}
+              onSelect={() => handleSelect("switzerland")}
+            >
               Switzerland
             </TabButton>
           </menu>
