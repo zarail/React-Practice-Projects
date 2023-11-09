@@ -1,8 +1,7 @@
-export default function TabButton({ children, onSelect }) {
+export default function TabButton({ children, onSelect, isSelected }) {
   // the folowing will be done in vanilla JS, but not in React.js:
   // document.querySelector("button").addEventListener("click", () => {
   //});
-
   // in React we don't have imperative code, but declarative code!
   // we declare what we want to happen, not how it should happen:
 
@@ -17,7 +16,9 @@ export default function TabButton({ children, onSelect }) {
 
   return (
     <li>
-      <button onClick={onSelect}>{children}</button>
+      <button className={isSelected ? "active" : undefined} onClick={onSelect}>
+        {children}
+      </button>
     </li>
   );
 }
