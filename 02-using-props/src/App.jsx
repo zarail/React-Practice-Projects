@@ -28,7 +28,7 @@ function App() {
   }
 
   return (
-    <div>
+    <>
       <Header />
       <main>
         <section id="countries">
@@ -89,7 +89,7 @@ function App() {
           {tabContent}
         </section>
       </main>
-    </div>
+    </>
   );
 }
 
@@ -97,3 +97,9 @@ export default App;
 
 // instead of the anonymous arrow function, we can also use a function declaration:
 // () => {} could be function() {}
+
+// in the return of the App component, instead of retruning a div, we can also return a fragment:
+// <></> is the same as <Fragment></Fragment> is the same as <div></div>
+// but if you use "Fragment", you have to import it from react:
+// import { Fragment } from "react";
+// it won't be needed with <></> though
