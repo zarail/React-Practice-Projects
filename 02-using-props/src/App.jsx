@@ -11,6 +11,8 @@ import TabButton from "./components/TabButton.jsx";
 function App() {
   const [selectedCountry, setSelectedCountry] = useState();
 
+  // If you use useState(); without providing an initial value, the state variable will be initialized with "undefined". This is typically used when the initial value doesn't matter, or you plan to update it shortly after the component mounts.
+
   function handleSelect(selectedButton) {
     // selectedButton, so that we know which country (button) was selected
     setSelectedCountry(selectedButton);
