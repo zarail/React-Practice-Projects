@@ -1,4 +1,4 @@
-export default function TabButton({ children, onSelect, isSelected }) {
+export default function TabButton({ children, isSelected, ...props }) {
   // the folowing will be done in vanilla JS, but not in React.js:
   // document.querySelector("button").addEventListener("click", () => {
   //});
@@ -14,9 +14,11 @@ export default function TabButton({ children, onSelect, isSelected }) {
   //  console.log("clicked!");
   //}
 
+  // here onClick will be passed to the button element as a prop (...props)
+
   return (
     <li>
-      <button className={isSelected ? "active" : undefined} onClick={onSelect}>
+      <button className={isSelected ? "active" : undefined} {...props}>
         {children}
       </button>
     </li>

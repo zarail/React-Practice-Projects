@@ -4,6 +4,7 @@ import { useState } from "react";
 // functions that start with "use" are hooks
 // we must call it on the top level of the component function!
 import TabButton from "./TabButton";
+import Section from "./Section";
 import { INFOS } from "../data";
 
 export default function Infos() {
@@ -28,41 +29,41 @@ export default function Infos() {
   }
 
   return (
-    <section id="infos">
+    <Section id="infos">
       <h2>Country Information</h2>
       <menu>
         <TabButton
           isSelected={selectedCountry === "austria"}
-          onSelect={() => handleSelect("austria")}
+          onClick={() => handleSelect("austria")}
         >
           Austria
         </TabButton>
         <TabButton
           isSelected={selectedCountry === "germany"}
-          onSelect={() => handleSelect("germany")}
+          onClick={() => handleSelect("germany")}
         >
           Germany
         </TabButton>
         <TabButton
           isSelected={selectedCountry === "liechtenstein"}
-          onSelect={() => handleSelect("liechtenstein")}
+          onClick={() => handleSelect("liechtenstein")}
         >
           Liechtenstein
         </TabButton>
         <TabButton
           isSelected={selectedCountry === "luxembourg"}
-          onSelect={() => handleSelect("luxembourg")}
+          onClick={() => handleSelect("luxembourg")}
         >
           Luxembourg
         </TabButton>
         <TabButton
           isSelected={selectedCountry === "switzerland"}
-          onSelect={() => handleSelect("switzerland")}
+          onClick={() => handleSelect("switzerland")}
         >
           Switzerland
         </TabButton>
       </menu>
       {tabContent}
-    </section>
+    </Section>
   );
 }
