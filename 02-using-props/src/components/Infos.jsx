@@ -29,8 +29,7 @@ export default function Infos() {
   }
 
   return (
-    <Section id="infos">
-      <h2>Country Information</h2>
+    <Section title="Country Information" id="infos">
       <menu>
         <TabButton
           isSelected={selectedCountry === "austria"}

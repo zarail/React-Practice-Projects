@@ -1,10 +1,9 @@
 import Country from "./Country";
-import Section from "./Section";
 import { COUNTRIES } from "../data";
 
 export default function Countries() {
   return (
-    <Section id="countries">
+    <section id="countries">
       <ul>
         {/*
         instead of writing the same code 5 times, we can use "map":
@@ -24,7 +23,7 @@ export default function Countries() {
           <Country key={countryItem.name} {...countryItem} />
         ))}
       </ul>
-    </Section>
+    </section>
   );
 }
 
