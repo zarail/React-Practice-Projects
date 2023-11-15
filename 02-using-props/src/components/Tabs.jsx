@@ -10,3 +10,6 @@ export default function Tabs({ children, buttons }) {
     </>
   );
 }
+
+// so we have a lean structure with buttons inside a menu
+// and the actual content as children
