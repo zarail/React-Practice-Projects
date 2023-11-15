@@ -13,3 +13,9 @@ export default function Tabs({ children, buttons }) {
 
 // so we have a lean structure with buttons inside a menu
 // and the actual content as children
+
+// here the "tabs" component has multiple slots
+// - the buttons
+// - the content
+
+// slots are a way to pass content to a component
