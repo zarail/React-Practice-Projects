@@ -6,6 +6,7 @@ import { useState } from "react";
 import TabButton from "./TabButton";
 import Section from "./Section";
 import { INFOS } from "../data";
+import Tabs from "./Tabs";
 
 export default function Infos() {
   const [selectedCountry, setSelectedCountry] = useState();
@@ -30,39 +31,8 @@ export default function Infos() {
 
   return (
     <Section title="Country Information" id="infos">
-      <menu>
-        <TabButton
-          isSelected={selectedCountry === "austria"}
-          onClick={() => handleSelect("austria")}
-        >
-          Austria
-        </TabButton>
-        <TabButton
-          isSelected={selectedCountry === "germany"}
-          onClick={() => handleSelect("germany")}
-        >
-          Germany
-        </TabButton>
-        <TabButton
-          isSelected={selectedCountry === "liechtenstein"}
-          onClick={() => handleSelect("liechtenstein")}
-        >
-          Liechtenstein
-        </TabButton>
-        <TabButton
-          isSelected={selectedCountry === "luxembourg"}
-          onClick={() => handleSelect("luxembourg")}
-        >
-          Luxembourg
-        </TabButton>
-        <TabButton
-          isSelected={selectedCountry === "switzerland"}
-          onClick={() => handleSelect("switzerland")}
-        >
-          Switzerland
-        </TabButton>
-      </menu>
-      {tabContent}
+      <Tabs>{tabContent}</Tabs>
+      {/* we pass the tabContent as children to the Tabs component */}
     </Section>
   );
 }
