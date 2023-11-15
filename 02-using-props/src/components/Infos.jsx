@@ -30,9 +30,48 @@ export default function Infos() {
   }
 
   return (
+    /* we pass "buttons" as a special prop to the Tabs component
+    so they will have the hook things and handlers with them */
     <Section title="Country Information" id="infos">
-      <Tabs>{tabContent}</Tabs>
-      {/* we pass the tabContent as children to the Tabs component */}
+      <Tabs
+        buttons={
+          <>
+            <TabButton
+              isSelected={selectedCountry === "austria"}
+              onClick={() => handleSelect("austria")}
+            >
+              Austria
+            </TabButton>
+            <TabButton
+              isSelected={selectedCountry === "germany"}
+              onClick={() => handleSelect("germany")}
+            >
+              Germany
+            </TabButton>
+            <TabButton
+              isSelected={selectedCountry === "liechtenstein"}
+              onClick={() => handleSelect("liechtenstein")}
+            >
+              Liechtenstein
+            </TabButton>
+            <TabButton
+              isSelected={selectedCountry === "luxembourg"}
+              onClick={() => handleSelect("luxembourg")}
+            >
+              Luxembourg
+            </TabButton>
+            <TabButton
+              isSelected={selectedCountry === "switzerland"}
+              onClick={() => handleSelect("switzerland")}
+            >
+              Switzerland
+            </TabButton>
+          </>
+        }
+      >
+        {tabContent}
+        {/* we pass the tabContent as children to the Tabs component */}
+      </Tabs>
     </Section>
   );
 }
