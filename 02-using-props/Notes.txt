@@ -1,0 +1,11 @@
+Splitting Components By Feature & State:
+
+each <section> in the App() component is a "feature".
+
+putting different features into different component is better practice in React projects.
+
+in this app, countries and infos are the two sections/features.
+
+--> then we have a lean and clearer code for the bigger projects! 
+
+also in the "infos" components there are some tabs which are reused!
