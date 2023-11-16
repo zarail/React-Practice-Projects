@@ -34,7 +34,7 @@ export default function Infos() {
     so they will have the hook things and handlers with them */
     <Section title="Country Information" id="infos">
       <Tabs
-        ButtonsContainer="menu" // or "div" or "nav" or "ul" or "ol"
+        ButtonsContainer="menu" // or "div" or "nav" or "ul" or "ol" --> the props "ButtonsContainer" accepts a component identifier (the string, here "menu") as a value.
         buttons={
           <>
             <TabButton

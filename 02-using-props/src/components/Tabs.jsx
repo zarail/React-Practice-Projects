@@ -1,4 +1,4 @@
-export default function Tabs({ children, buttons, ButtonsContainer }) {
+export default function Tabs({ children, buttons, ButtonsContainer = "menu" }) {
   // here we return a fragment ...
   // menu element will wrap the tabs
   // const ButtonsContainer = buttonsContainer; // (trick)
@@ -29,3 +29,5 @@ export default function Tabs({ children, buttons, ButtonsContainer }) {
 // const ButtonsContainer = buttonsContainer; // (trick)
 
 // OR we can get rid of the trick and use the prop directly with capital letter (see above) (chapter 67)
+
+// "menu" has been set to be the default value for the prop "buttonsContainer" (chapter 68)
