@@ -1,9 +1,10 @@
-export default function Tabs({ children, buttons }) {
+export default function Tabs({ children, buttons, buttonsContainer }) {
   // here we return a fragment ...
   // menu element will wrap the tabs
+  const ButtonsContainer = buttonsContainer;
   return (
     <>
-      <menu>{buttons}</menu>
+      <ButtonsContainer>{buttons}</ButtonsContainer>
       {/* ... and the "content" which will be shown by chooing a tab
       the "children" will show the actual contents */}
       {children}
@@ -19,3 +20,7 @@ export default function Tabs({ children, buttons }) {
 // - the content
 
 // slots are a way to pass content to a component
+
+// setting component types dynamically
+// if we want to aloow the developer to choose with wrapper element to use for the tabs component that they reuse in the app
+// so we add an additional prop, here: "buttonsContainer"

@@ -34,6 +34,7 @@ export default function Infos() {
     so they will have the hook things and handlers with them */
     <Section title="Country Information" id="infos">
       <Tabs
+        buttingsContainer="menu" // or "div" or "nav" or "ul" or "ol"
         buttons={
           <>
             <TabButton
