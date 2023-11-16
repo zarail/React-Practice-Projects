@@ -1,7 +1,7 @@
 export default function Tabs({ children, buttons, buttonsContainer }) {
   // here we return a fragment ...
   // menu element will wrap the tabs
-  const ButtonsContainer = buttonsContainer;
+  const ButtonsContainer = buttonsContainer; // (trick)
   return (
     <>
       <ButtonsContainer>{buttons}</ButtonsContainer>
@@ -24,3 +24,5 @@ export default function Tabs({ children, buttons, buttonsContainer }) {
 // setting component types dynamically
 // if we want to aloow the developer to choose with wrapper element to use for the tabs component that they reuse in the app
 // so we add an additional prop, here: "buttonsContainer"
+
+// (trick): in the const ButtonsContainer we use the prop as a component type, we set the value to buttonsContainer, but started with a capital letter, so that it can be used as a custom component, but has the value of the prop!!! ... then in the "infos" component it will see that it is a string, a <menu> element, and will render it as such (chapter 67)
