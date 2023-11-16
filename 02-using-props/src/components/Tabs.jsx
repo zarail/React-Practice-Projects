@@ -1,7 +1,7 @@
-export default function Tabs({ children, buttons, buttonsContainer }) {
+export default function Tabs({ children, buttons, ButtonsContainer }) {
   // here we return a fragment ...
   // menu element will wrap the tabs
-  const ButtonsContainer = buttonsContainer; // (trick)
+  // const ButtonsContainer = buttonsContainer; // (trick)
   return (
     <>
       <ButtonsContainer>{buttons}</ButtonsContainer>
@@ -26,3 +26,6 @@ export default function Tabs({ children, buttons, buttonsContainer }) {
 // so we add an additional prop, here: "buttonsContainer"
 
 // (trick): in the const ButtonsContainer we use the prop as a component type, we set the value to buttonsContainer, but started with a capital letter, so that it can be used as a custom component, but has the value of the prop!!! ... then in the "infos" component it will see that it is a string, a <menu> element, and will render it as such (chapter 67)
+// const ButtonsContainer = buttonsContainer; // (trick)
+
+// OR we can get rid of the trick and use the prop directly with capital letter (see above) (chapter 67)
