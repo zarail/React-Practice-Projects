@@ -4,7 +4,7 @@ function App() {
   return (
     <div id="app">
       <Input type="text" placeholder="Your name" />
-      <Input richText placeholder="Your message" />
+      <Input multiline placeholder="Your message" />
     </div>
   );
 }
