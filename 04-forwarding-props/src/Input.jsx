@@ -3,6 +3,8 @@
 
 export default function Input({ richText, ...props }) {
   return richText ? <textarea {...props} /> : <input {...props} />;
+  // <taextarea> is a built-in HTML element that allows users to enter multiple lines of text.
+  // <input> is a built-in HTML element that allows users to enter a single line of text.
 }
 
 /* OR:
