@@ -57,3 +57,13 @@ function App() {
 }
 
 export default App;
+
+/*
+there are only three different types of buttons here: filled, outline, and text-only.
+
+the right strategy to choose names for the css classes is to choose the names in way that we can later on use them dynamically via string interpolation. (Button.jsx)
+
+--> string interpolation: let cssClasses = `button ${mode}-button`;
+
+and the classNames are: button filled-button, button outline-button, button text-button
+*/
