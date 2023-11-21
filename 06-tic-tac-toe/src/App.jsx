@@ -1,16 +1,13 @@
+import Player from "./components/Player";
+
 function App() {
   return (
     <main>
       <div id="game-container">
         <ol id="players">
-          <li>
-            <span className="player-name">Player 1</span>
-            <span className="player-symbol">X</span>
-          </li>
-          <li>
-            <span className="player-name">Player 2</span>
-            <span className="player-symbol">O</span>
-          </li>
+          {/* here we output the "Player" component: */}
+          <Player name="Player 1" symbol="X" />
+          <Player name="Player 2" symbol="O" />
         </ol>
         GAME BOARD
       </div>
@@ -29,5 +26,8 @@ for the styling purposes:
 - outside the <div> there is the game log
 
 we add <span> for the styling purposes
+
+WERE THERE ARE REPETITIONS WE SHOULD USE COMPONENTS. THAT'S WHAT REACT IS ALL ABOUT!
+--> easier maintenance, debugging, modification, etc.
 
 */
