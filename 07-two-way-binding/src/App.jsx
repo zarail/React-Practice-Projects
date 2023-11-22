@@ -4,6 +4,7 @@ import Review from "./Review";
 function App() {
   const [feedback, setFeedback] = useState(""); // variable names must be identical to the ones in the Review component
   const [studentName, setStudentName] = useState(""); // variable names must be identical to the ones in the Review component
+  const [buttonText, setButtonText] = useState("Save");
 
   // but in the functions we can use any name we want, as long as we use the correct setter and we follwo the convention of using the word "handle" in the name of the function:
 
@@ -14,6 +15,10 @@ function App() {
   function handleStudentNameChange(event) {
     setStudentName(event.target.value);
   }
+
+  const handleClick = () => {
+    setButtonText("Saved!");
+  };
 
   return (
     <>
@@ -39,7 +44,7 @@ function App() {
         {/* feedback={feedback} student={studentName} (before "=" variable name in this component and inside {} variable name of the Review component!!!)*/}
 
         <p>
-          <button>Save</button>
+          <button onClick={handleClick}>{buttonText}</button>
         </p>
       </section>
     </>
