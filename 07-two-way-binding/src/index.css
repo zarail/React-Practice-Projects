@@ -9,7 +9,7 @@ body {
   font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#180d27, #0c0219);
+  background: #363062;
   color: #e5d9f1;
   min-height: 100vh;
 }
@@ -18,8 +18,8 @@ body {
   max-width: 30rem;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: #669ae7;
-  color: #041023;
+  background-color: #818fb4;
+  color: black;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
@@ -46,7 +46,7 @@ body {
   width: 100%;
   border-radius: 4px;
   border: 1px solid #798aa9;
-  background-color: #b4c4e6;
+  background-color: #cad2e4;
   color: #041023;
 }
 
@@ -55,8 +55,8 @@ body {
   max-width: 30rem;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: #67d7b0;
-  color: #0b3929;
+  background-color: #f5e8c7;
+  color: black;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   text-align: center;
@@ -70,7 +70,7 @@ body {
 #draft blockquote {
   margin: 0 2rem;
   padding: 0.5rem 1rem;
-  background-color: #65b69a;
+  background-color: #f6f4eb;
   border-radius: 4px;
   color: #042217;
   font-style: italic;
@@ -90,8 +90,8 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   border: none;
-  background-color: #0b3929;
-  color: #ecf8f4;
+  background-color: #435585;
+  color: #f7f8ec;
   font-size: 1rem;
   cursor: pointer;
 }
