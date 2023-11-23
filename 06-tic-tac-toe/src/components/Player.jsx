@@ -1,6 +1,6 @@
 import { useState } from "react"; // we should call "useState" in the function body
 
-export default function Player({ initialName, symbol }) {
+export default function Player({ initialName, symbol, isActive }) {
   const [playerName, setPlayerName] = useState(initialName); //
   const [isEditing, setIsEditing] = useState(false); // array destructuring to store these two elements in separate constants
   // the "isEditing" state can be true/false and will be used to show/hide the input field, and gets initialized with "false" (useState(false))
@@ -15,7 +15,7 @@ export default function Player({ initialName, symbol }) {
   }
 
   return (
-    <li>
+    <li className={isActive ? "active" : undefined}>
       {/* the outer spans with className="player" separates player area and the btn for styling */}
       <span className="player">
         {isEditing ? (
