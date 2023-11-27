@@ -38,11 +38,21 @@ function App() {
     gameBoard[row][col] = player;
   }
 
+  let winner; // it's undefined by default (OR: let winner = null;)
+
   // the following function will be executed every time the app component is rendered (or the gameTurns state is updated):
   for (const combination of WINNING_COMBINATIONS) {
     const firstSquareSymbol = gameBoard[combination[0].row][combination[0].column];
     const secondSquareSymbol = gameBoard[combination[1].row][combination[1].column];
     const thirdSquareSymbol = gameBoard[combination[2].row][combination[2].column];
+
+    // all 3 square symbols should be NOT null && should be the same:
+    if (firstSquareSymbol &&
+      firstSquareSymbol === secondSquareSymbol &&
+      firstSquareSymbol === thirdSquareSymbol) {
+
+      winner = firstSquareSymbol;
+    }
   };
 
   function handleSelectSquare(rowIndex, colIndex) {
@@ -66,6 +76,7 @@ function App() {
           <Player initialName="Player 1" symbol="X" isActive={activePlayer === "X"} />
           <Player initialName="Player 2" symbol="O" isActive={activePlayer === "O"} />
         </ol>
+        {winner && <p>You won, {winner}!</p>}
         <GameBoard onSelectSquare={handleSelectSquare}
         board={gameBoard}/>
       </div>
