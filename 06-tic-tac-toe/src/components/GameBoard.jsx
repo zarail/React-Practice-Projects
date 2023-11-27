@@ -1,34 +1,7 @@
-const initialGameBoard = [
-  [null, null, null],
-  [null, null, null],
-  [null, null, null]
-];
-
-export default function GameBoard({ onSelectSquare, turns }) {
-  let gameBoard = initialGameBoard;
-
-  for (const turn of turns) {
-    const { square, player } = turn;
-    const { row, col } = square;
-
-    gameBoard[row][col] = player;
-  }
-
-  // const [gameBoard, setGameBoard] = useState(initialGameBoard);
-
-  // function handleSelectSquare(rowIndex, colIndex) {
-  //   setGameBoard((previuosGameBoard) => {
-  //     const updatedBoard = [...previuosGameBoard.map(innerArray => [...innerArray])];
-  //     // REMINDER: "..." or the "spread operator" is used to paste in all the existing elements of the old array
-  //     // it's highly recommended to "map" (make a copy of the original array) and not to work directly on the original array --> they will be updated in an immutable way (without changing the original array)
-  //     updatedBoard[rowIndex][colIndex] = activePlayerSymbol;
-  //     return updatedBoard;
-  //   });
-  //   onSelectSquare();
-
+export default function GameBoard({ onSelectSquare, board }) {
   return (
     <ol id="game-board">
-      {gameBoard.map((row, rowIndex) => (
+      {board.map((row, rowIndex) => (
         <li key={rowIndex}>
           <ol>
             {row.map((playerSymbol, colIndex) => (
@@ -43,6 +16,7 @@ export default function GameBoard({ onSelectSquare, turns }) {
     </ol>
   )
 }
+
 
 /*
 () => handleSelectSquare is called an "anonymous function" (a function without a name)
