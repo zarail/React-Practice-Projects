@@ -30,7 +30,7 @@ function deriveActivePlayer(gameTurns) {
 }
 
 function deriveGameBoard(gameTurns) {
-  let gameBoard = [...initialGameBoard.map(array => [...array])]; // a deep copy of the initialGameBoard array (outer and inner arrays) --> a new array in the memory after every rematching!
+  let gameBoard = [...INITIAL_GAME_BOARD.map(array => [...array])]; // a deep copy of the initialGameBoard array (outer and inner arrays) --> a new array in the memory after every rematching!
 
   for (const turn of gameTurns) {
     const { square, player } = turn;
