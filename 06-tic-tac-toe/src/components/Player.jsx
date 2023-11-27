@@ -1,6 +1,6 @@
 import { useState } from "react"; // we should call "useState" in the function body
 
-export default function Player({ initialName, symbol, isActive }) {
+export default function Player({ initialName, symbol, isActive, onChangeName }) {
   const [playerName, setPlayerName] = useState(initialName); //
   const [isEditing, setIsEditing] = useState(false); // array destructuring to store these two elements in separate constants
   // the "isEditing" state can be true/false and will be used to show/hide the input field, and gets initialized with "false" (useState(false))
@@ -8,6 +8,10 @@ export default function Player({ initialName, symbol, isActive }) {
 
   function handleEditClick() {
     setIsEditing(!isEditing); // when the "Edit" btn is clicked, the "isEditing" state will be set to "true" and vice versa --> toggling the state
+
+    if (isEditing) {
+      onChangeName(symbol, playerName); // when the "Edit" btn is clicked, the "onChangeName" function will be called and the "symbol" and "playerName" will be passed as arguments
+    }
   }
 
   function handleNameChange(event) {
