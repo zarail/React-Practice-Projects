@@ -22,15 +22,16 @@ function deriveActivePlayer(gameTurns) {
   return currentPlayer;
 }
 
-
 function App() {
-  const [gameTurns, setGameTurns] = useState([]);
+  const [gameTurns, setGameTurns] = useState([]); // the state which controls the whole game!!!
+  // if you want to reset the game, you can just set the gameTurns to an empty array!
+
   // const [hasWinner, setHasWinner] = useState(false); // we don't need this approach because we have the winning combinations, so it's redundant!
   // const [activePlayer, setActivePlayer] = useState("X");
 
   const activePlayer = deriveActivePlayer(gameTurns);
 
-  let gameBoard = initialGameBoard;
+  let gameBoard = [...initialGameBoard.map(array => [...array])]; // a deep copy of the initialGameBoard array (outer and inner arrays) --> a new array in the memory after every rematching!
 
   for (const turn of gameTurns) {
     const { square, player } = turn;
@@ -71,6 +72,11 @@ function App() {
     });
   };
 
+  // to reset the game hand the following function to the button in GameOver component:
+  function handleResetGame() {
+    setGameTurns([]);
+  }
+
   return (
     <main>
       <div id="game-container">
@@ -79,7 +85,7 @@ function App() {
           <Player initialName="Player 1" symbol="X" isActive={activePlayer === "X"} />
           <Player initialName="Player 2" symbol="O" isActive={activePlayer === "O"} />
         </ol>
-        {(winner || hasDraw) && <GameOver winner={winner} />}
+        {(winner || hasDraw) && <GameOver winner={winner} onRestart={handleResetGame} />}
         <GameBoard onSelectSquare={handleSelectSquare}
         board={gameBoard}/>
       </div>
