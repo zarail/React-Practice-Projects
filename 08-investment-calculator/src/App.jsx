@@ -1,6 +1,8 @@
 function App() {
   return (
-    <h1>React Investment Calculator</h1>
+    <main id="user-input">
+      <h1>This is from the App component</h1>
+    </main>
   )
 }
 
