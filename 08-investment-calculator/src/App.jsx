@@ -2,13 +2,25 @@ import UserInput from "./components/UserInput"
 
 function App() {
   return (
-    <main id="user-input">
+    <main>
       <div>
-        <ol id="user-input" className="input-group">
-          <UserInput />
-          <UserInput />
-          <UserInput />
-          <UserInput />
+        <ol id="user-input">
+          <div className="input-group">
+            <UserInput
+            label="Initial Investment"
+            />
+            <UserInput
+            label="Annual Investment"
+            />
+          </div>
+          <div className="input-group">
+            <UserInput
+            label="Expected Return"
+            />
+            <UserInput
+            label="Duration"
+            />
+          </div>
         </ol>
       </div>
     </main>
