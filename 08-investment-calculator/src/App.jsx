@@ -1,8 +1,10 @@
 import UserInput from "./components/UserInput"
+import Header from "./components/Header"
 
 function App() {
   return (
     <main>
+      <Header />
       <div>
         <ol id="user-input">
           <div className="input-group">
