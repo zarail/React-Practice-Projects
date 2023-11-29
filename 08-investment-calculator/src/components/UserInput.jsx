@@ -4,9 +4,9 @@ export default function UserInput(props) {
       <span>
         <label htmlFor={props.label}>{props.label}</label>
         <input
-          type="text"
+          type="number"
           required
-          value="placeholder"
+          value="0"
           id={props.label}
         />
       </span>
