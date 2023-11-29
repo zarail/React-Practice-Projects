@@ -5,7 +5,7 @@ export default function UserInput() {
         <input
           type="text"
           required
-          value="investment"
+          value="placeholder"
         />
       </span>
     </li>
