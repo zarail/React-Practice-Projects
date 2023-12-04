@@ -1,4 +1,27 @@
+import { useState } from 'react';
+
 export default function UserInput() {
+  const [initialInvestment, setInitialinvestment] = useState(0);
+  const [annualInvestment, setAnnualInvestment] = useState(0);
+  const [expectedReturn, setExpectedReturn] = useState(0);
+  const [duration, setDuration] = useState(0);
+
+  function handleInitialInvestmentChange(event) {
+    setInitialinvestment(event.target.value);
+  }
+
+  function handleAnnualInvestmentChange(event) {
+    setAnnualInvestment(event.target.value);
+  }
+
+  function handleExpectedReturnChange(event) {
+    setExpectedReturn(event.target.value);
+  }
+
+  function handleDurationChange(event) {
+    setDuration(event.target.value);
+  }
+
   return <section id="user-input">
     <div className="input-group">
       <p>
@@ -6,7 +29,8 @@ export default function UserInput() {
         <input
           type="number"
           required
-          value="0"
+          value={initialInvestment}
+          onChange={handleInitialInvestmentChange}
         />
       </p>
       <p>
@@ -14,7 +38,8 @@ export default function UserInput() {
         <input
           type="number"
           required
-          value="0"
+          value={annualInvestment}
+          onChange={handleAnnualInvestmentChange}
         />
       </p>
     </div>
@@ -24,7 +49,8 @@ export default function UserInput() {
         <input
           type="number"
           required
-          value="0"
+          value={expectedReturn}
+          onChange={handleExpectedReturnChange}
         />
       </p>
       <p>
@@ -32,7 +58,8 @@ export default function UserInput() {
         <input
           type="number"
           required
-          value="0"
+          value={duration}
+          onChange={handleDurationChange}
         />
       </p>
     </div>
