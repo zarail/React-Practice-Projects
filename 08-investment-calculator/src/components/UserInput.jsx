@@ -38,3 +38,5 @@ export default function UserInput() {
     </div>
   </section>
 }
+
+// the <section> includes two divs, each with two paragraphs marked with class "input-group"
