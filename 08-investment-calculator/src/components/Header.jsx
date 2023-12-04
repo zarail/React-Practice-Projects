@@ -1,4 +1,5 @@
 import logo from "../assets/investment-calculator-logo.png"
+// we can assign a variable name directly in the import, and then use that variable name as the "src" attribute value
 
 export default function Header() {
   return (
