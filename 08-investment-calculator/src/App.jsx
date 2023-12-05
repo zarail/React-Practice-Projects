@@ -1,16 +1,20 @@
 import { useState } from 'react';
+
 import Header from "./components/Header"
 import UserInput from "./components/UserInput"
 import ResultsTable from "./components/ResultsTable"
 
-const [userInput, setUserInput] = useState({
-  initialInvestment: 10000,
-  annualInvestment: 1200,
-  expectedReturn: 6,
-  duration: 10,
-});
+// userInput (App), input (UserInput) and theInput (ResultsTable) are all the same thing, but they are named differently in different components, to avoid confusions.
 
-// the "inputIdentifier" will get a string as a value that either is initialInvestment, or annualInvestment, or expectedReturn, or duration:
+function App() {
+  const [userInput, setUserInput] = useState({
+    initialInvestment: 10000,
+    annualInvestment: 1200,
+    expectedReturn: 6,
+    duration: 10,
+  });
+
+  // the "inputIdentifier" will get a string as a value that either is initialInvestment, or annualInvestment, or expectedReturn, or duration:
 
   function handleUserInputChange(inputIdentifier, newValue) {
     setUserInput(previousUserInput => {
@@ -21,12 +25,11 @@ const [userInput, setUserInput] = useState({
     });
   };
 
-  function App() {
   return (
     <>
       <Header />
       <UserInput input={userInput} onChangeInput={handleUserInputChange} />
-      <ResultsTable />
+      <ResultsTable theInput={userInput} />
     </>
   )
 }

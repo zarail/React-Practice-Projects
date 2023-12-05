@@ -1,4 +1,4 @@
-export default function ResultsTable() {
+export default function ResultsTable({ theInput }) {
 
   const tableData = [
     { year: 1,
