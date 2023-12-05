@@ -72,11 +72,11 @@ body {
   padding: 1rem;
   table-layout: fixed;
   border-spacing: 1rem;
-  text-align: right;
+  text-align: center;
 }
 
 #result thead {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   color: #83e6c0;
 }
 

@@ -14,13 +14,20 @@ function App() {
     duration: 10,
   });
 
+  // const [results, setResults] = useState([]);
+
+  // const handleCalculate = () => {
+  //   const investmentResults = calculateInvestmentResults(userInput);
+  //   setResults(investmentResults);
+  // };
+
   // the "inputIdentifier" will get a string as a value that either is initialInvestment, or annualInvestment, or expectedReturn, or duration:
 
   function handleUserInputChange(inputIdentifier, newValue) {
     setUserInput(previousUserInput => {
       return {
         ...previousUserInput, // copy all the old values in the new obj
-        [inputIdentifier]: newValue, // overwrite the value of the changed input
+        [inputIdentifier]: +newValue, // overwrite the value of the changed input, the "+" converts the string to a number
       };
     });
   };

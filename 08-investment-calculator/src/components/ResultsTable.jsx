@@ -1,111 +1,47 @@
-import calculateInvestmentResults from "../util/investment";
+import { calculateInvestmentResults, formatter } from '../util/investment';
 
 export default function ResultsTable({ theInput }) {
-  console.log(theInput);
+  const resultsData = calculateInvestmentResults(theInput);
+  const initialInvestment = resultsData[0].valueEndOfYear - resultsData[0].interest - resultsData[0].annualInvestment;
 
-  const tableData = [
-    { year: 1,
-      investmentValue: 0,
-      interest: 0,
-      totalInterest: 0,
-      investedCapital: 0,
-    },
-    { year: 2,
-      investmentValue: 0,
-      interest: 0,
-      totalInterest: 0,
-      investedCapital: 0,
-    },
-    { year: 3,
-      investmentValue: 0,
-      interest: 0,
-      totalInterest: 0,
-      investedCapital: 0,
-    },
-
-    { year: 4,
-      investmentValue: 0,
-      interest: 0,
-      totalInterest: 0,
-      investedCapital: 0,
-    },
-    { year: 5,
-      investmentValue: 0,
-      interest: 0,
-      totalInterest: 0,
-      investedCapital: 0,
-    },
-    { year: 6,
-      investmentValue: 0,
-      interest: 0,
-      totalInterest: 0,
-      investedCapital: 0,
-    },
-    { year: 7,
-      investmentValue: 0,
-      interest: 0,
-      totalInterest: 0,
-      investedCapital: 0,
-    },
-    { year: 8,
-      investmentValue: 0,
-      interest: 0,
-      totalInterest: 0,
-      investedCapital: 0,
-    },
-    { year: 9,
-      investmentValue: 0,
-      interest: 0,
-      totalInterest: 0,
-      investedCapital: 0,
-    },
-    { year: 10,
-      investmentValue: 0,
-      interest: 0,
-      totalInterest: 0,
-      investedCapital: 0,
-    },
-    { year: 11,
-      investmentValue: 0,
-      interest: 0,
-      totalInterest: 0,
-      investedCapital: 0,
-    },
-    { year: 12,
-      investmentValue: 0,
-      interest: 0,
-      totalInterest: 0,
-      investedCapital: 0,
-    },
-  ];
+  console.log(resultsData);
 
   return (
-    <div id="result" className="center">
-      <h3 className="center">This is ResultsTable!</h3>
-      <table className="center">
-        <thead>
-          <tr>
-            <th>Year</th>
-            <th>Investment Value</th>
-            <th>Interest(Year)</th>
-            <th>Total Interest</th>
-            <th>Invested Capital</th>
-          </tr>
-        </thead>
+    <table id="result" className="center">
+      <thead>
+        <tr>
+          {/* titles of the header: th */}
+          <th>Year</th>
+          <th>Investment Value</th>
+          <th>Interest (Year)</th>
+          <th>Total Interest</th>
+          <th>Invested Capital</th>
+        </tr>
+      </thead>
 
-        <tbody>
-          {tableData.map((row) => (
-            <tr key={row.year}>
-              <td>{row.year}</td>
-              <td>{row.investmentValue}</td>
-              <td>{row.interest}</td>
-              <td>{row.totalInterest}</td>
-              <td>{row.investedCapital}</td>
+      <tbody>
+        {resultsData.map((yearData) => {
+          const totalInterest =
+          yearData.valueEndOfYear -
+          yearData.annualInvestment * yearData.year -
+          initialInvestment;
+
+          const totalAmountInvested = yearData.valueEndOfYear - totalInterest;
+
+          return (
+            // the "year" property will be the key as it is unique for each year
+            <tr key={yearData.year}>
+              {/* table data: td */}
+              <td>{yearData.year}</td>
+              <td>{formatter.format(yearData.valueEndOfYear)}</td>
+              <td>{formatter.format(yearData.interest)}</td>
+              <td>{formatter.format(totalInterest)}</td>
+              <td>{formatter.format(totalAmountInvested)}</td>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          )
+        })}
+      </tbody>
+    </table>
   )
 }
 
