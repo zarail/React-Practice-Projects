@@ -4,8 +4,6 @@ import Header from "./components/Header"
 import UserInput from "./components/UserInput"
 import ResultsTable from "./components/ResultsTable"
 
-// userInput (App), input (UserInput) and theInput (ResultsTable) are all the same thing, but they are named differently in different components, to avoid confusions.
-
 function App() {
   const [userInput, setUserInput] = useState({
     initialInvestment: 10000,
@@ -14,12 +12,7 @@ function App() {
     duration: 10,
   });
 
-  // const [results, setResults] = useState([]);
-
-  // const handleCalculate = () => {
-  //   const investmentResults = calculateInvestmentResults(userInput);
-  //   setResults(investmentResults);
-  // };
+  const inputIsValid = userInput.duration >= 1;
 
   // the "inputIdentifier" will get a string as a value that either is initialInvestment, or annualInvestment, or expectedReturn, or duration:
 
@@ -32,11 +25,14 @@ function App() {
     });
   };
 
+  // userInput (App), input (UserInput) and theInput (ResultsTable) are all the same thing, but they are named differently in different components, to avoid confusions.
+
   return (
     <>
       <Header />
       <UserInput input={userInput} onChangeInput={handleUserInputChange} />
-      <ResultsTable theInput={userInput} />
+      {!inputIsValid && <p className="center">Please enter a valid duration (at least 1 year).</p>}
+      {inputIsValid && <ResultsTable theInput={userInput} />}
     </>
   )
 }
