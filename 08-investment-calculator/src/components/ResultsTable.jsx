@@ -1,78 +1,81 @@
+import calculateInvestmentResults from "../util/investment";
+
 export default function ResultsTable({ theInput }) {
+  console.log(theInput);
 
   const tableData = [
     { year: 1,
       investmentValue: 0,
       interest: 0,
       totalInterest: 0,
-      investedCapital: 0
+      investedCapital: 0,
     },
     { year: 2,
       investmentValue: 0,
       interest: 0,
       totalInterest: 0,
-      investedCapital: 0
+      investedCapital: 0,
     },
     { year: 3,
       investmentValue: 0,
       interest: 0,
       totalInterest: 0,
-      investedCapital: 0
+      investedCapital: 0,
     },
 
     { year: 4,
       investmentValue: 0,
       interest: 0,
       totalInterest: 0,
-      investedCapital: 0
+      investedCapital: 0,
     },
     { year: 5,
       investmentValue: 0,
       interest: 0,
       totalInterest: 0,
-      investedCapital: 0
+      investedCapital: 0,
     },
     { year: 6,
       investmentValue: 0,
       interest: 0,
       totalInterest: 0,
-      investedCapital: 0
+      investedCapital: 0,
     },
     { year: 7,
       investmentValue: 0,
       interest: 0,
       totalInterest: 0,
-      investedCapital: 0
+      investedCapital: 0,
     },
     { year: 8,
       investmentValue: 0,
       interest: 0,
       totalInterest: 0,
-      investedCapital: 0
+      investedCapital: 0,
     },
     { year: 9,
       investmentValue: 0,
       interest: 0,
       totalInterest: 0,
-      investedCapital: 0
+      investedCapital: 0,
     },
     { year: 10,
       investmentValue: 0,
       interest: 0,
       totalInterest: 0,
-      investedCapital: 0
+      investedCapital: 0,
     },
     { year: 11,
       investmentValue: 0,
       interest: 0,
       totalInterest: 0,
-      investedCapital: 0
+      investedCapital: 0,
     },
     { year: 12,
       investmentValue: 0,
       interest: 0,
       totalInterest: 0,
-      investedCapital: 0
+      investedCapital: 0,
     },
   ];
 

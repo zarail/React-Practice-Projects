@@ -6,6 +6,7 @@
 // - duration: The investment duration (time frame)
 
 // The function receives an object as an input and returns an array of objects:
+
 export function calculateInvestmentResults({
   initialInvestment,
   annualInvestment,
