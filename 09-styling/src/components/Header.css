@@ -40,3 +40,5 @@ header p {
     font-size: 2.25rem;
   }
 }
+
+/* non of the styles in this file are scoped to the "Header" component */
