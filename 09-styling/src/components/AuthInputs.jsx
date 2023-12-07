@@ -7,7 +7,7 @@ const ControlContainer = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
-`
+`;
 // it is a common convention to prefix the props which you only want to use in your styled component styling code with a dollar sign. This is still a valid prop name and allowed in JavaScript, but you won't clash with built-in props:
 
 const Label = styled.label`
@@ -18,7 +18,7 @@ const Label = styled.label`
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: ${({$invalid}) => $invalid ? '#f87171' : '#6b7280'};
-`
+`;
 
 const Input = styled.input`
   width: 100%;
@@ -29,7 +29,7 @@ const Input = styled.input`
   border: 1px solid ${({$invalid}) => $invalid ? '#f73f3f' : 'transparent'};
   border-radius: 0.25rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-`
+`;
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState('');
