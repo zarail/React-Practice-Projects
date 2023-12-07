@@ -24,7 +24,8 @@ export default function AuthInputs() {
     <div id="auth-inputs">
       <div className="controls">
         <p>
-          <label>Email</label>
+          {/* the follwoing condition will change the color of the lable "Email" to red if and invalid email address is passed to the field and SIGN IN btn is clicked (sunbmitted) (the consition is not set for the password field)*/}
+          <label className={`label ${emailNotValid ? "invalid" : "" }`}>Email</label>
           <input
             type="email"
             className={emailNotValid ? 'invalid' : undefined}
