@@ -1,3 +1,5 @@
+/* .module naming pattern here is basically a signal for the underlying build process (for the Vite build tool, which is getting used in this project, to process this css file slightly differently) */
+
 header {
   display: flex;
   flex-direction: column;
@@ -25,7 +27,7 @@ header h1 {
   margin: 0;
 }
 
-header p {
+.paragraph {
   text-align: center;
   color: #a39191;
   margin: 0;
