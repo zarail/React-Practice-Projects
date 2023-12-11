@@ -1,4 +1,33 @@
-import { styled } from 'styled-components';
+// import { styled } from 'styled-components';
+
+export default function CustomInput({ label, invalid, ...props }) {
+
+  // to adjust the content conditionally:
+
+  let labelClasses = 'block mb-2 text-xs font-bold tracking-wide uppercase';
+
+  let inputClasses = 'w-full px-3 py-2 leading-tight border rounded shadow';
+
+  if (invalid) {
+    labelClasses += ' text-red-400';
+    inputClasses += ' text-red-500 bg-red-100 border-red-300';
+  } else {
+    labelClasses += ' text-stone-300';
+    inputClasses += ' text-gray-700 bg-stone-300';
+  }
+
+  return (
+    <p>
+      <label className={labelClasses}>{label}</label>
+      <input className={inputClasses} {...props}/>
+    </p>
+  );
+};
+
+// this is a resuable combined component that can be used in any other component
+
+/*
+with styled-components:
 
 const Label = styled.label`
   display: block;
@@ -23,9 +52,8 @@ const Input = styled.input`
 
 export default function CustomInput({ label, invalid, ...props }) {
   return <p>
-      <Label $invalid={invalid}>{label}</Label>
-      <Input $invalid={invalid} {...props}/>
+    <Label $invalid={invalid}>{label}</Label>
+    <Input $invalid={invalid} {...props}/>
   </p>
 };
-
-// this is a resuable combined component that can be used in any other component
+*/
