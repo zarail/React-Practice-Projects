@@ -38,6 +38,10 @@ export default function Player() {
   );
 }
 
+/*
+one of the use cases of refs: like, for example, where you just aim to read a value from an input field. --> leaner code, less state, less complexity!
+*/
+
 /* the code before using ref:
 
 import { useState } from "react"; // importing useState hook
