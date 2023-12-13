@@ -16,6 +16,7 @@ export default function Player() {
 
   function handleClick() {
     setEnteredPlayerName(playerName.current.value); // to update the enteredplayerName state with the value of the input element
+    playerName.current.value = ""; // to clear the input field after the name has been submitted
   }
 
   return (
