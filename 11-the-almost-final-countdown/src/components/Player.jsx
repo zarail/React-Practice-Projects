@@ -78,3 +78,11 @@ export default function Player() {
 }
 
 */
+
+/*
+difference between refs and state:
+
+Whenever a ref changes, the component function does not re-execute.
+
+But whenever the state is updated by calling that state updating function the component function will be re-executed.
+*/
