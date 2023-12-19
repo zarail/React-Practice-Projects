@@ -1,6 +1,11 @@
-export default function ResultModal({ result, targetTime }) {
+import { forwardRef } from 'react'; // allows us to forward the ref from a (parent) component to another (child) component
+
+// forwardRef should wrap the function component that we want to forward the ref to.
+// it stores the function in a constant and exports it:
+
+const ResultModal = forwardRef(function ResultModal({ result, targetTime }, ref) {
   return (
-    <dialog className="result-modal" open> {/* has built-in styling & features ... set "open" to make it visible */}
+    <dialog ref={ref} className="result-modal"> {/* has built-in styling & features ... set "open" to make it visible */}
       <h2>You {result}!</h2>
       <p>The target time was <strong>{targetTime}</strong> seconds.</p>
       <p>You stopped the timer with <strong>X seconds left</strong>.</p>
@@ -9,4 +14,6 @@ export default function ResultModal({ result, targetTime }) {
       </form>
     </dialog>
   )
-}
+});
+
+export default ResultModal;
