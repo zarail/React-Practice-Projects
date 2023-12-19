@@ -1,4 +1,5 @@
 import { forwardRef, useImperativeHandle, useRef } from 'react'; // allows us to forward the ref from a (parent) component to another (child) component
+import { createPortal } from "react-dom"; // allows us to render a component into a different place in the DOM than where it is defined
 
 // forwardRef should wrap the function component that we want to forward the ref to.
 // it stores the function in a constant and exports it:
@@ -21,7 +22,9 @@ const ResultModal = forwardRef(function ResultModal({ targetTime, remainingTime,
     };
   });
 
-  return (
+  // the first argument of createPortal() is the jsx code, the second argument is the DOM (HTML) element that we want to render it into (from the index.html file)):
+
+  return createPortal(
     <dialog ref={dialog} className="result-modal" onClose={onReset}> {/* has built-in styling & features ... set "open" to make it visible ... onClose={onReset} --> To make sure that onReset gets triggered when the dialog is closed via the escape key */}
       {userLost && <h2>You lost!</h2>}
       {!userLost && <h2>Your score: {score}</h2>}
@@ -30,7 +33,8 @@ const ResultModal = forwardRef(function ResultModal({ targetTime, remainingTime,
       <form method="dialog" onSubmit={onReset}>
         <button>Close</button> {/* this will close the dialog */}
       </form>
-    </dialog>
+    </dialog>,
+    document.getElementById("modal") // this is the DOM element that we want to render the dialog into
   );
 });
 
