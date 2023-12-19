@@ -7,17 +7,15 @@ export default function TimerChallenge({ title, targetTime }) {
   const dialog = useRef();
 
   // states to start and stop the timer:
-  const [timerStarted, setTimerStarted] = useState(false);
-  const [timerExpired, setTimerExpired] = useState(false);
+  const [timeRemaining, setTimeremaining] = useState(targetTime * 1000);
+
+  const timerIsActive = timeRemaining > 0 && timeRemaining < targetTime * 1000;
 
   function handleStart() {
     // JS built-in function: a timer of 1000 milliseconds, that will execute the anonymous function after the timer has run out
-    timer.current = setTimeout(() => { // bcs you always must target the current value of the ref
-      setTimerExpired(true);
-      dialog.current.open();
-    }, targetTime * 1000); // the time (that is in milliseconds) should be based on the targetTime prop, so we multiply the targetTime by 1000
-
-    setTimerStarted(true);
+    timer.current = setInterval(() => { // setInterval() returns a timer ID that we can store in a variable ... will execute the function it recieves every time the timer runs out (not just once)
+      setTimeremaining(prevTimeReamining => prevTimeReamining - 10); // 10 milliseconds = 0.01 seconds
+    }, 10); // 1000 milliseconds = 1 second
   }
 
   function handleStop() {
