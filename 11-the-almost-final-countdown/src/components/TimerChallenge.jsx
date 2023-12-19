@@ -20,7 +20,7 @@ export default function TimerChallenge({ title, targetTime }) {
 
   function handleStop() {
   // JS built-in function: clearTimerout() --> to stop the timer but it needs a pointer to the timer (its ID) that we want to stop, that's why we need to store the timer in a variable
-    clearTimeout(timer.current);
+    clearInterval(timer.current);
   }
 
   return (
