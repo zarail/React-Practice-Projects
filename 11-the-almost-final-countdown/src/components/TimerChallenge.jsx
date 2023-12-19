@@ -14,7 +14,7 @@ export default function TimerChallenge({ title, targetTime }) {
     // JS built-in function: a timer of 1000 milliseconds, that will execute the anonymous function after the timer has run out
     timer.current = setTimeout(() => { // bcs you always must target the current value of the ref
       setTimerExpired(true);
-      dialog.current.showModal(); // showModal() is bulit-in to show the dialog
+      dialog.current.open();
     }, targetTime * 1000); // the time (that is in milliseconds) should be based on the targetTime prop, so we multiply the targetTime by 1000
 
     setTimerStarted(true);
