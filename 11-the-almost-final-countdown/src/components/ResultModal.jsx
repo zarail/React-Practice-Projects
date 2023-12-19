@@ -22,7 +22,7 @@ const ResultModal = forwardRef(function ResultModal({ targetTime, remainingTime,
   });
 
   return (
-    <dialog ref={dialog} className="result-modal"> {/* has built-in styling & features ... set "open" to make it visible */}
+    <dialog ref={dialog} className="result-modal" onClose={onReset}> {/* has built-in styling & features ... set "open" to make it visible ... onClose={onReset} --> To make sure that onReset gets triggered when the dialog is closed via the escape key */}
       {userLost && <h2>You lost!</h2>}
       {!userLost && <h2>Your score: {score}</h2>}
       <p>The target time was <strong>{targetTime} seconds</strong>.</p>
