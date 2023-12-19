@@ -14,6 +14,7 @@ export default function TimerChallenge({ title, targetTime }) {
   if (timeRemaining <= 0) {
     clearInterval(timer.current);
     setTimeremaining(targetTime * 1000);
+    dialog.current.open();
   }
 
   function handleStart() {
@@ -25,6 +26,7 @@ export default function TimerChallenge({ title, targetTime }) {
 
   function handleStop() {
   // JS built-in function: clearTimerout() --> to stop the timer but it needs a pointer to the timer (its ID) that we want to stop, that's why we need to store the timer in a variable
+    dialog.current.open();
     clearInterval(timer.current);
   }
 
@@ -37,10 +39,10 @@ export default function TimerChallenge({ title, targetTime }) {
           {targetTime} second{targetTime > 1 ? "s" : ""}
         </p>
         <p>
-          <button onClick={timerStarted ? handleStop : handleStart}>{timerStarted ? "Stop" : "Start"} Challenge</button>
+          <button onClick={timerIsActive ? handleStop : handleStart}>{timerIsActive ? "Stop" : "Start"} Challenge</button>
         </p>
-        <p className={timerStarted ? "active" : undefined}>
-          {timerStarted ? "Time is running..." : "Timer inactive"}
+        <p className={timerIsActive ? "active" : undefined}>
+          {timerIsActive ? "Time is running..." : "Timer inactive"}
         </p>
       </section>
     </>
