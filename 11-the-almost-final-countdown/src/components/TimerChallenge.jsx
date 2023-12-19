@@ -11,6 +11,11 @@ export default function TimerChallenge({ title, targetTime }) {
 
   const timerIsActive = timeRemaining > 0 && timeRemaining < targetTime * 1000;
 
+  if (timeRemaining <= 0) {
+    clearInterval(timer.current);
+    setTimeremaining(targetTime * 1000);
+  }
+
   function handleStart() {
     // JS built-in function: a timer of 1000 milliseconds, that will execute the anonymous function after the timer has run out
     timer.current = setInterval(() => { // setInterval() returns a timer ID that we can store in a variable ... will execute the function it recieves every time the timer runs out (not just once)
